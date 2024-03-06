@@ -3,10 +3,10 @@ import { SET_CURRENT_USER,
 SUCCESSFUL_REGISTER,
 FAILURE_REGISTER,
 ERROR,
+AUTH_ERROR,
 } from "./types";
 import { getServer } from "../utill";
-import{setAuthToken}from "../utill/setAuthToken"
-
+import setAuthToken from "../utill/setAuthToken";
 export const setCurrentUser = (user) => async dispatch=> {
     if(localStorage.token){
         setAuthToken(localStorage.token);
@@ -19,7 +19,7 @@ export const setCurrentUser = (user) => async dispatch=> {
         });
     } catch (err) {
         dispatch({
-            type: AUTH_ERROR
+            type: AUTH_ERROR,
         })
     }
     return{
@@ -31,7 +31,7 @@ export const setCurrentUser = (user) => async dispatch=> {
 export const resgister =(userData)=> async (dispatch) =>{
     const config = {
         headers:{
-            "Content-type": "application/json"
+            "Content-Type": "application/json",
         }
     }
     try {
@@ -41,7 +41,7 @@ export const resgister =(userData)=> async (dispatch) =>{
             payload: res.data
         })
     } catch (err) {
-        const error = err.respones.data.errors;
+        const error = err.response.data.errors;
         if (err) {
             dispatch({
                 type: ERROR,
@@ -49,8 +49,7 @@ export const resgister =(userData)=> async (dispatch) =>{
             });
         } else {
             dispatch({
-                type: ERROR,
-                payload: error,
+                type: FAILURE_REGISTER,
             });
         }
     }

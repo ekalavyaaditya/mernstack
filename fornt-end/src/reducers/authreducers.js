@@ -1,4 +1,8 @@
-import { ERROR, FAILURE_REGISTER,AUTH_ERROR,SET_CURRENT_USER, SUCCESSFUL_REGISTER } from "../actions/types";
+import { ERROR,
+     FAILURE_REGISTER,
+     AUTH_ERROR,
+     SET_CURRENT_USER,
+      SUCCESSFUL_REGISTER } from "../actions/types";
 import { isEmpty } from "lodash";
 
 const initialState = {
@@ -15,7 +19,7 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 isAuthenticated: true,
-                user: action.payload
+                user: payload
             }
             case SUCCESSFUL_REGISTER:
                 localStorage.set("token", payload.token)

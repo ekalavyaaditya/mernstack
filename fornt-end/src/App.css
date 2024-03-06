@@ -1,64 +1,12 @@
 :root {
-  --PrimaryColor: #2ecc71; /* Primary color, green */
-  --SecondaryColor: #6c757d; /* Secondary color, grayish blue */
-  --TextColor: #343a40; /* Text color, dark gray */
-  --BackgroundColorLight: #f8f9fa; /* Light mode background color */
-  --BackgroundColorDark: #212529; /* Dark mode background color */
-  --AccentColor1: #3498db; /* Light blue */
-  --AccentColor2: #e74c3c; /* Red */
-  --AccentColor3: #f39c12; /* Orange */
-}
-.navbar {
-  background-color: #343a40; /* Dark gray */
-  color: #f8f9fa; /* Light gray */
-  padding: 10px 20px;
-}
-
-.navbar h1 {
-  margin: 0;
-}
-
-.navbar a {
-  color: var(--BackgroundColorLight); /* Light gray */
-  text-decoration: none;
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin-left: 15px;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-}
-
-.navbar ul li a:hover {
-  text-decoration: underline;
-  color: var(--AccentColor1);
-}
-
-.container h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: var(--AccentColor1);
-  font-family: 'Brush Script MT';
-  font-size: 90px;
-  text-shadow: 5px 5px 10px var(--AccentColor3);
-  background-image: url('../src/assest/homebackground.jpg') ;
-  height: 70vh;
-}
-.container p{
-  font-family: 'Courier New';
-  text-align: center;
+  --PrimaryColor: #f74f29c7; /* Primary color, orange */
+  --SecondaryColor: #00aeff   ; /* Secondary color, light blue */
+  --AccentColor1: #41bd73; /* Light green */
+  --TextDarkColor: #d6c8c8; /* Text color for dark mode, white */
+  --TextlightColor: #07070793; /* Text color for light mode, black */
+  --White: rgb(255, 255, 255); /* Background color for light mode, light gray */
+  --Black: #000000; /* Background color for dark mode, black */
+  --fontOne:Brush Script MT;
+  --fontTwo:Courier New;
+  --blur: rgba(0, 0, 0, 0);
 }
