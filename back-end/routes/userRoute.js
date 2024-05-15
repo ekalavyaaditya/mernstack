@@ -24,7 +24,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     try{
-      const { name, email, password } = req.body
+      const { name, email, password, role } = req.body
         let user = await User.findOne({ email: email })  
         if(user){
             return res
@@ -35,6 +35,7 @@ router.post(
             name,
             email,
             password,
+            role,
         });
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
