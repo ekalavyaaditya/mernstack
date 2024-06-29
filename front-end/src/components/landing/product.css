@@ -1,4 +1,10 @@
-.product{
+.productContainer{
+    width: auto;
+    margin: 10px;
+}
+.productRow{
     display: flex;
     flex-direction: row;
+    column-gap: 15px;
+    margin: 10px;
 }

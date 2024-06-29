@@ -8,4 +8,4 @@ export const AUTH_ERROR = "AUTH_ERROR";
 export const FAILURE_LOGIN = "FAILURE_LOGIN";
 export const SUCCESSFUL_LOGIN = "SUCCESSFUL_LOGIN";
 export const LOGOUT = "LOGOUT";
-export const PORDUCT_ERRROR = "PORDUCT_ERRROR";
+export const PORDUCT_ERROR = "PORDUCT_ERROR";

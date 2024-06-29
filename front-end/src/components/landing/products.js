@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getproduct } from "../../actions/productAction";
-import { Card } from "antd";
-
-const { Meta } = Card;
+import Product from "../general/Product";
+import "./product.css";
 
 class Products extends Component {
   constructor(props) {
@@ -17,41 +16,34 @@ class Products extends Component {
     this.props.getproduct();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps && nextProps.products.products) {
-      const products = nextProps.products.products;
+  componentDidUpdate(prevProps) {
+    if (prevProps.products.products !== this.props.products.products) {
+      const products = this.props.products.products;
       this.setState({ products });
     }
   }
-  productDetails = (product) =>{
-    return(
+
+  productDetails = (product) => () => {
+    return (
       <ul>
-        <li>Rupees:{product.price}</li>
-        <li>quantity:{product.quantity}</li>
+        <li>Rupees: {product.price}</li>
+        <li>Quantity: {product.quantity}</li>
       </ul>
     );
   };
+
   render() {
     const { products } = this.state;
     return (
-      <div className="container">
-        <div className="row">
+      <div className="productContainer">
+        <div className="productRow">
           {products.map((product, index) => (
-            <card
+            <Product
               key={index}
-              hoverable
-              style={{
-                width: 240,
-              }}
-              cover={
-                <img
-                  alt="example"
-                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                />
-              }
-            >
-              <Meta title={product.name} description={this.productDetails(product)} />
-            </card>
+              product={product}
+              description={this.productDetails(product)}
+              buttonName="Add to Card"
+            />
           ))}
         </div>
       </div>
@@ -61,6 +53,7 @@ class Products extends Component {
 
 const mapStateToProps = (state) => ({
   products: state.products,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { getproduct })(Products);

@@ -1,11 +1,11 @@
-import { GET_PRODUCTS, PORDUCT_ERRROR } from "../actions/types";
+import { GET_PRODUCT, GET_PRODUCTS, PORDUCT_ERROR } from "../actions/types";
 const initialState = {
   products: [],
   product: {},
   errors: {},
 };
 
-export default function (state = initialState, action) {
+const productReducers = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case GET_PRODUCTS:
@@ -13,7 +13,12 @@ export default function (state = initialState, action) {
         ...state,
         products: payload,
       };
-    case PORDUCT_ERRROR:
+    case GET_PRODUCT:
+      return {
+        ...state,
+        products: payload,
+      };
+    case PORDUCT_ERROR:
       return {
         ...state,
         errors: payload,
@@ -21,4 +26,5 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+export default productReducers;

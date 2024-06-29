@@ -16,7 +16,8 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  componentWillReceiveProps(nextProps) {
+  componentWillUpdate(nextProps) {
+    console.log(nextProps);
     if (nextProps && nextProps.errors && nextProps.errors.length > 0) {
       nextProps.errors.forEach((error) => {
         message.error(error.msg);
@@ -67,7 +68,7 @@ class Login extends Component {
               name="password"
               type="password"
               placeholder="Enter Password"
-              value={password || ""}
+              value={password}
               onChange={this.onChange}
             />
             <br />

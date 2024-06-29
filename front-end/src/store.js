@@ -21,11 +21,3 @@ try {
 }
 
 export default store;
-// try {
-//     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-//     const enhancer = composeEnhancers(applyMiddleware(...middleware));
-//     store = createStore(rootReducer, initialState, enhancer);
-// } catch (error) {
-//     console.error("Error creating Redux store:", error);
-//     store = createStore(rootReducer, initialState);
-// }

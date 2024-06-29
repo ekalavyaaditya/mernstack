@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
 
-const Input = ({ type, name, placeholder, value, onChange }) => {
+const Input = ({ type, name, placeholder, value, onChange,style }) => {
   return (
     <div className="from-group">
       <input
@@ -10,6 +10,7 @@ const Input = ({ type, name, placeholder, value, onChange }) => {
         name={name}
         value={value}
         onChange={onChange}
+        style={style}
       />
     </div>
   );
