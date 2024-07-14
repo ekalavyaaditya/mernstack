@@ -6,5 +6,5 @@ import profileReducers from "./profileReducers"
 export default combineReducers({
     auth: authReducers,
     products: productsReducers,
-    Profile: profileReducers,
+    profile: profileReducers,
 });

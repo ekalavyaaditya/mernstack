@@ -35,7 +35,7 @@ export const addproduct = (productData, history) => async (dispatch) => {
 
 export const getInstructorProduct = (id) => async (dispatch) => {
   try {
-    console.log("id==>>",id)
+    // console.log("id==>>",id)
     const res = await axios.get(`${getServer()}/api/products/instructors/${id}`);
     dispatch({
       type: GET_PRODUCTS,

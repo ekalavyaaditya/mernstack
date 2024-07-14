@@ -123,7 +123,6 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
 abbr[data-original-title],
 abbr[title] {
   text-decoration: underline;
@@ -2716,7 +2715,10 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
-
+.own-class {
+  border: 0px !important;
+  margin-left: 0px !important;
+}
 .btn-primary {
   color: #fff;
   background-color: #4e73df;

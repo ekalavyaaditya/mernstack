@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getServer } from "../utill";
-import {GET_PROFILE,PROFILE_ERROR,ERRORS} from "./types"
+import {GET_PROFILE,PROFILE_ERROR} from "./types"
 
 export const getProfile = (id) => async dispatch=>{
         try {

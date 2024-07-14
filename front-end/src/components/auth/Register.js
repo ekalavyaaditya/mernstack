@@ -74,7 +74,7 @@ class Register extends Component {
     const { name, password, password2, email } = this.state;
     return (
       <div className="Regbg">
-        <div className="Main">
+        <div className="Main" style={{padding:"10px",height: "60%"}}>
           <h1 className="heading">Register</h1>
           <p className="pgr">Create Your Account</p>
           <div className="input-container">
@@ -111,7 +111,7 @@ class Register extends Component {
             />
           </div>
           <br />
-          <Button type="primary" className="Rbtn" onClick={this.onSubmit}>
+          <Button type="primary" className="Rbtn" onClick={this.onSubmit} style={{display: "flex"}}>
             Register
           </Button>
           <br />

@@ -44,15 +44,15 @@ class Products extends Component {
     const { merachantProducts } = this.state;
     return (
       <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          flexDirection: "row",
-          margin: "2%",
-          gap: "2%",
-          justifyContent: "flex-start",
-          rowGap: "20px"
-        }}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        flexDirection: "row",
+        margin: "2%",
+        gap: "2%",
+        justifyContent: "space-around",
+        rowGap: "20px"
+      }}
       >
         {merachantProducts.map((product) => (
           <Product

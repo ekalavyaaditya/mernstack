@@ -7,6 +7,8 @@ import { logout } from "../../actions/authAction";
 import Home from "./components/Home";
 import AddProduct from "./components/AddProduct";
 import Products from "./components/Products";
+import Profile from "./components/Profile.js";
+import AddProfile from "./components/AddProfile.js";
 
 const Dashboard = ({ auth, logout }) => {
   const location = useLocation();
@@ -48,17 +50,26 @@ const Dashboard = ({ auth, logout }) => {
             <span>Add Product</span>
           </Link>
         </li>
+        <hr className="sidebar-divider" />
         <li className={`nav-item ${activePath === "/dashboard/product" ? "active" : ""}`} id="product">
           <Link className="nav-link" to="/dashboard/products">
             <span>Products</span>
           </Link>
         </li>
         <hr className="sidebar-divider" />
-        <li className="nav-item">
-          <Link className="nav-link collapsed" to="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-            <i className="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+        <li className={`nav-item ${activePath === "/dashboard/profile" ? "active" : ""}`} id="profile">
+          <Link className="nav-link" to="/dashboard/profile">
+            <span>Profile</span>
           </Link>
+        </li>
+        <hr className="sidebar-divider" />
+        <li className={`nav-item ${activePath === "/dashboard/addprofile" ? "active" : ""}`} id="addprofile">
+          <Link className="nav-link" to="/dashboard/addprofile">
+            <span>Add Profile</span>
+          </Link>
+        </li>
+        <hr className="sidebar-divider" />
+        <li className="nav-item">
           <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Login Screens:</h6>
@@ -72,22 +83,7 @@ const Dashboard = ({ auth, logout }) => {
             </div>
           </div>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/charts">
-            <i className="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/tables">
-            <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
-          </Link>
-        </li>
         <hr className="sidebar-divider d-none d-md-block" />
-        <div className="text-center d-none d-md-inline">
-          <button className="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
       </ul>
 
       <div id="content-wrapper" className="d-flex flex-column">
@@ -98,10 +94,10 @@ const Dashboard = ({ auth, logout }) => {
             </button>
             <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
               <div className="input-group">
-                <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-on2" />
-                <div className="input-group-append">
-                  <button className="btn btn-primary" type="button">
-                    <i className="fas fa-search fa-sm"></i>
+                <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-on2" style={{paddingBottom: "4px",left: "5px"}} />
+                <div className="input-group-append" style={{marginLeft: "0px"}}>
+                  <button className="btn btn-primary own-class" type="button">
+                    <i className="fas fa-search fa-sm" style={{display:"flex",justifyContent:"center"}}></i>
                   </button>
                 </div>
               </div>
@@ -131,10 +127,10 @@ const Dashboard = ({ auth, logout }) => {
                   <Avatar size={40}>{user.name && avatarText(user.name)}</Avatar>
                 </Link>
                 <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <Link className="dropdown-item" to="#">
+                  {/* <Link className="dropdown-item" to="#">
                     <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
-                  </Link>
+                  </Link> */}
                   <Link className="dropdown-item" to="#">
                     <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Settings
@@ -156,6 +152,8 @@ const Dashboard = ({ auth, logout }) => {
             <Route exact path="/dashboard" component={Home} />
             <Route path="/dashboard/addproduct" component={AddProduct} />
             <Route path="/dashboard/products" component={Products} />
+            <Route path="/dashboard/profile" component={Profile} />
+            <Route path="/dashboard/AddProfile" component={AddProfile} />
           </Switch>
         </div>
         <footer className="sticky-footer bg-white">

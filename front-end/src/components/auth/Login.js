@@ -53,7 +53,7 @@ class Login extends Component {
     return (
       <div className="logbg">
         <div className="log">
-          <form>
+          <form style={{padding: "10px"}}>
             <h1>Sign In</h1>
             <p>Sing Into Your Account</p>
             <Input

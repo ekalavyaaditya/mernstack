@@ -9,3 +9,5 @@ export const FAILURE_LOGIN = "FAILURE_LOGIN";
 export const SUCCESSFUL_LOGIN = "SUCCESSFUL_LOGIN";
 export const LOGOUT = "LOGOUT";
 export const PORDUCT_ERROR = "PORDUCT_ERROR";
+export const GET_PROFILE = "GET_PROFILE";
+export const PROFILE_ERROR = "PROFILE_ERROR";

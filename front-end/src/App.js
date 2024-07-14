@@ -12,6 +12,8 @@ import Home from "./components/dashboard/components/Home";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Landing from "./components/landing";
+import AddProfile from "./components/dashboard/components/AddProfile";
+import Profile from "./components/dashboard/components/Profile.js";
 import "./App.css";
 
 if (localStorage.token) {
@@ -35,6 +37,8 @@ function App() {
             <ProtectedRoute path="/dashboard/home" component={Home} />
             <ProtectedRoute path="/dashboard/addproduct" component={AddProduct} />
             <ProtectedRoute path="/dashboard/product" component={Product} />
+            <ProtectedRoute path="/dashboard/profile" component={Profile} />
+            <ProtectedRoute path="/dashboard/addprofile" component={AddProfile} />
           </Switch>
         </div>
       </Router>
