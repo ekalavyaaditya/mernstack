@@ -1,4 +1,5 @@
 import React from "react";
+// import Globe from 'react-globe.gl';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -101,6 +102,7 @@ const Home = ({ auth }) => {
           </div>
           <div className ="col-12"> 
             <h1 className="mb-4">Welcome {name}</h1>
+            {/* <Globe/> */}
           </div>
         </div>
       </div>

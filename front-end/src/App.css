@@ -307,6 +307,7 @@ select {
 [type="submit"],
 button {
   -webkit-appearance: button;
+  appearance: button;
 }
 
 [type="button"]:not(:disabled),
@@ -365,7 +366,8 @@ progress {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: none;
+  -webkit-appearance: button;
+  appearance: button;
 }
 
 [type="search"]::-webkit-search-decoration {

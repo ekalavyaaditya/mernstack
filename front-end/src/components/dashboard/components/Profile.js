@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {getProfile} from "../../../actions/profileAction"
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom/cjs/react-router-dom.min'
+import { withRouter,Link } from 'react-router-dom'
 import {decodeUser} from "../../../utill" 
 class Profile extends Component {
     constructor(props){
@@ -19,9 +19,15 @@ class Profile extends Component {
     render() {
         const {name} =this.props.auth.user;
     return (
-      <div className='container'>
-        <h2>Welcome {name}</h2>
-        {this.state.profile ? <h1> I have a profile</h1>: <h1>create a profile</h1>}
+      <div className='container' style={{padding:"auto"}}>
+        <h2 styl={{textAlign: "center"}}>Welcome {name}</h2>
+        {this.state.profile ? <h1> I have a profile</h1>: 
+        <Fragment>
+        <span>create a profile</span><Link className="btn btn-primary" to="/dashboard/addprofile" style={{fontsize:"10px"}}>
+        create profile
+        </Link>
+        
+        </Fragment>}
       </div>
     )
   }
